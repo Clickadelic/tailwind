@@ -6,118 +6,217 @@
     <title>TailWind</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between items-center bg-slate-100">
-<div class="w-full border border-b border-slate-400">
-<!-- Header Layout -->
-<div class="w-full">
-    <header class="bg-white shadow-lg py-4">
-        <div class="mx-auto container">
-            <div class="flex justify-between">
-                <div class="flex justify-start md:justify-between sm:space-x-4 md:space-x-16 lg:space-x-44">
-                    <div class="flex shrink-0">
-                        <h1>
-                            <a href="/" class="text-3xl group group:hover:text-sky-600">
-                                <span class="font-light italic text-slate-400 group">Movie</span>
-                                <span class="font-bold text-slate-800 group">DB</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="hidden sm:flex sm:space-x-1 md:space-x-2 lg:space-x-8 mt-1">
-                        <a href="/" class="flex items-center gap-2 hover:text-sky-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-                            </svg>
-                            Start
-                        </a>
-                        <a href="/movies" class="flex items-center gap-2 hover:text-sky-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
-                            </svg>
-                            Movies
-                        </a>
-                        <a href="/regisseure" class="flex items-center gap-2 hover:text-sky-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
-                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                            </svg>
-                            Regisseure
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden sm:ms-2 sm:flex sm:items-center">
-                    <div class="space-x-1 sm:space-x-2 md:space-x-3">
-                        <a href="/register" class="text-slate-800 hover:text-slate-500 border border-sky-700 px-3 py-1 rounded">
-                            Registrierung
-                        </a>
-                        <a href="/login" class="text-white border border-sky-700 bg-sky-600 hover:bg-sky-700 hover:text-slate-200 hover:border-sky-600  px-3 py-1 rounded">
-                            Login
-                        </a>
-                    </div>
-                </div>
-                <div class="-me-2 flex items-center sm:hidden">
-                    <button
-                        
-                        class="inline-flex items-center justify-center rounded p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
-                    >
-                        <svg
-                            class="h-6 w-6"
-                            stroke="currentColor"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                class={
-                                    !showingNavigationDropdown
-                                        ? 'inline-flex'
-                                        : 'hidden'
-                                }
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                            <path
-                                class={
-                                    showingNavigationDropdown
-                                        ? 'inline-flex'
-                                        : 'hidden'
-                                }
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-</div>
-<!-- Ende Header Layout -->
-<!-- Slideshow -->
-<div class="w-full py-24 bg-sky-700 flex items-center justify-center bg-camera">
-    <h2 class="text-white text-4xl">Seitentitel</h2>
-</div>
-<!-- Ende Slideshow -->
-<!-- Content Layout -->
-<main class="container mx-auto grow py-6 transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-    <h2 class="text-2xl mb-3">Hallo Startseite</h2>
-    <p>Das ist meine erste Blade-Seite 🎉</p>
-</main>
-<!-- Ende Content Layout -->
-<!-- Footer Layout -->
-<footer class="bg-gray-900 text-white py-8">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-        <p>&copy; 2025 Movie DB</p>
-        <div class="space-x-4 mt-4 md:mt-0">
-            <a href="/datenschutz" class="hover:underline">Datenschutz</a>
-            <a href="/impressum" class="hover:underline">Impressum</a>
-            <a href="mailto:support@example.com" class="hover:underline">Support</a>
-        </div>
-    </div>
-</footer>
-<!-- Ende Footer Layout -->
+<body class="min-h-screen bg-slate-50 text-slate-900">
+<div class="flex">
+	<!-- SIDEBAR -->
+	<aside class="w-72 bg-white border-r border-slate-200 min-h-screen sticky top-0 flex flex-col">
+		<div class="p-4 border-b border-slate-100">
+			<div class="flex items-center gap-3">
+			<div class="h-10 w-10 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">TA</div>
+			<div>
+				<h1 class="text-lg font-semibold">TailAdmin</h1>
+				<p class="text-sm text-slate-500">Dashboard</p>
+			</div>
+			</div>
+		</div>
 
+		<nav class="p-4 flex-1">
+			<ul class="space-y-1">
+				<li>
+					<a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 transition">
+					<!-- Icon: replace with inline SVG if desired -->
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					<span>Overview</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 transition">
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+					<span>Users</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 transition">
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3v18h18"/></svg>
+					<span>Revenue</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-slate-50 transition">
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V7l-4-3H8L4 7v5c0 6 8 10 8 10z"/></svg>
+					<span>Notifications</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="p-4 border-t border-slate-100">
+			<button class="w-full text-left p-2 rounded-md hover:bg-slate-50">Settings</button>
+		</div>
+	</aside>
+
+	<!-- MAIN -->
+	<main class="flex-1 p-6">
+		<!-- TOPBAR -->
+		<header class="flex items-center justify-between mb-6">
+		<div class="flex items-center gap-4">
+			<button class="p-2 rounded-md hover:bg-slate-100" aria-label="menu">
+			<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+			</button>
+			<div>
+			<h2 class="text-2xl font-semibold">Dashboard</h2>
+			<div class="text-sm text-slate-500">Übersicht &amp; Statistiken</div>
+			</div>
+		</div>
+
+		<div class="flex items-center gap-4">
+			<input class="border border-slate-200 rounded-md px-3 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-sky-400" placeholder="Search">
+			<button class="p-2 rounded-md hover:bg-slate-100" aria-label="notifications">
+			<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6 6 0 1 0-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5"/></svg>
+			</button>
+
+			<div class="flex items-center gap-3">
+			<div class="h-9 w-9 rounded-full bg-slate-300" aria-hidden></div>
+			<div class="text-sm">
+				<div class="font-medium">Tobias Hopp</div>
+				<div class="text-xs text-slate-500">Admin</div>
+			</div>
+			</div>
+		</div>
+		</header>
+
+		<!-- STATS -->
+		<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+		<!-- Repeat/replace these blocks with server-rendered values in Laravel -->
+		<article class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+			<div class="flex items-center justify-between">
+			<div class="text-slate-400">Revenue</div>
+			<div class="p-2 bg-slate-100 rounded-md">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1v22"/></svg>
+			</div>
+			</div>
+			<div class="mt-4 text-2xl font-semibold">€ 24,300</div>
+			<div class="mt-2 text-sm text-slate-500">Vergleich: +12% gegenüber Vorwoche</div>
+		</article>
+
+		<article class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+			<div class="flex items-center justify-between">
+			<div class="text-slate-400">Users</div>
+			<div class="p-2 bg-slate-100 rounded-md">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3"/></svg>
+			</div>
+			</div>
+			<div class="mt-4 text-2xl font-semibold">4,120</div>
+			<div class="mt-2 text-sm text-slate-500">Neue: 120 diese Woche</div>
+		</article>
+
+		<article class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+			<div class="flex items-center justify-between">
+			<div class="text-slate-400">Orders</div>
+			<div class="p-2 bg-slate-100 rounded-md">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h18v18H3z"/></svg>
+			</div>
+			</div>
+			<div class="mt-4 text-2xl font-semibold">1,230</div>
+			<div class="mt-2 text-sm text-slate-500">Offen: 34</div>
+		</article>
+
+		<article class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+			<div class="flex items-center justify-between">
+			<div class="text-slate-400">Alerts</div>
+			<div class="p-2 bg-slate-100 rounded-md">
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V7l-4-3H8L4 7v5c0 6 8 10 8 10z"/></svg>
+			</div>
+			</div>
+			<div class="mt-4 text-2xl font-semibold">3</div>
+			<div class="mt-2 text-sm text-slate-500">Kritisch: 1</div>
+		</article>
+		</section>
+
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+		<!-- CHART (placeholder) -->
+		<div class="col-span-2 bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+			<div class="flex items-center justify-between mb-4">
+			<h3 class="text-lg font-medium">Traffic (letzte 7 Tage)</h3>
+			<div class="text-sm text-slate-500">Live</div>
+			</div>
+			<!-- Replace the SVG below with a chart library output (Chart.js, ApexCharts, etc.) in your app -->
+			<div class="h-56 flex items-center justify-center text-slate-400">
+			<!-- simple illustrative svg chart -->
+			<svg width="100%" height="100%" viewBox="0 0 200 80" preserveAspectRatio="none">
+				<polyline points="0,60 25,40 50,50 75,30 100,35 125,20 150,30 175,10 200,25" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.6"/>
+			</svg>
+			</div>
+		</div>
+
+		<!-- RIGHT COLUMN -->
+		<div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+			<h3 class="text-lg font-medium mb-3">Recent Activity</h3>
+			<ul class="space-y-3 text-sm text-slate-600">
+			<li class="flex items-start gap-3">
+				<div class="h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sky-700">A</div>
+				<div>
+				<div class="font-medium">Anna</div>
+				<div class="text-xs text-slate-500">Hat gerade eine Bestellung abgegeben</div>
+				</div>
+			</li>
+			<li class="flex items-start gap-3">
+				<div class="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-700">M</div>
+				<div>
+				<div class="font-medium">Marc</div>
+				<div class="text-xs text-slate-500">Neuer Benutzer registriert</div>
+				</div>
+			</li>
+			<li class="flex items-start gap-3">
+				<div class="h-8 w-8 rounded-full bg-rose-100 flex items-center justify-center text-rose-700">S</div>
+				<div>
+				<div class="font-medium">System</div>
+				<div class="text-xs text-slate-500">Backup erfolgreich</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+		</div>
+
+		<!-- TABLE -->
+		<section class="mt-6 bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
+		<div class="flex items-center justify-between mb-4">
+			<h3 class="text-lg font-medium">Letzte Bestellungen</h3>
+			<div class="text-sm text-slate-500">Zeige 10 Einträge</div>
+		</div>
+
+		<div class="overflow-x-auto">
+			<table class="w-full text-sm table-auto">
+			<thead class="text-slate-500 text-left">
+				<tr>
+				<th class="py-3 pr-6">Order</th>
+				<th class="py-3 pr-6">Customer</th>
+				<th class="py-3 pr-6">Total</th>
+				<th class="py-3 pr-6">Status</th>
+				<th class="py-3 pr-6">Date</th>
+				</tr>
+			</thead>
+			<tbody class="text-slate-700">
+				<tr class="border-t border-slate-100">
+				<td class="py-3">#2314</td>
+				<td class="py-3">Anna</td>
+				<td class="py-3">€ 129.00</td>
+				<td class="py-3"><span class="px-2 py-1 rounded-full text-xs bg-emerald-100 text-emerald-700">Completed</span></td>
+				<td class="py-3">2025-08-25</td>
+				</tr>
+				<tr class="border-t border-slate-100">
+				<td class="py-3">#2313</td>
+				<td class="py-3">Marc</td>
+				<td class="py-3">€ 49.00</td>
+				<td class="py-3"><span class="px-2 py-1 rounded-full text-xs bg-amber-100 text-amber-700">Pending</span></td>
+				<td class="py-3">2025-08-24</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		</section>
+
+	</main>
+</div>
 </body>
 </html>
